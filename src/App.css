@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  box-sizing: content-box;
+}
+
+

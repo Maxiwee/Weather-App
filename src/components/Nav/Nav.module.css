@@ -1,0 +1,43 @@
+.nav{
+  background-color: rgba(0, 0, 0, .8);
+  padding: .5rem;
+  display: flex;
+  justify-content:space-between;
+  text-align: center;
+  margin-bottom: 1rem;
+  background-size: auto;
+  height: 100%;
+}
+  .link{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bannerLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.7rem;
+  }
+  
+    #logoHenry {
+      margin-right: 20px;
+      border-radius: 0.3rem;
+      width: 5rem;
+    }
+  
+    .bannerLogo h1 {
+      color: white;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+    }
+  
+
+  @media (max-width:615px) {
+    .nav{
+      flex-direction: column;
+    }
+  }
