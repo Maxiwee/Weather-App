@@ -11,14 +11,14 @@ function App() {
 
   const { REACT_APP_API_KEY } = process.env;
 
-  const onSearch = (city) => {
+  const onSearch = city => {
     if (!city) return alert('Ingrese una ciudad');
-    
+
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${REACT_APP_API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${REACT_APP_API_KEY}&units=metric`
     )
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         if (data.name) {
           const newCity = {
             id: data.id,
@@ -35,19 +35,19 @@ function App() {
             latitud: data.coord.lat,
           };
 
-          const cityCharged = cities.find((city) => city.id === newCity.id);
+          const cityCharged = cities.find(city => city.id === newCity.id);
 
           cityCharged
             ? alert('Ciuidad existente')
-            : setCities((cities) => [...cities, newCity]);
+            : setCities(cities => [...cities, newCity]);
         } else {
           alert('Ciudad no encontrada');
         }
       });
   };
 
-  const onClose = (id) => {
-    setCities((cities) => cities.filter((c) => c.id != id));
+  const onClose = id => {
+    setCities(cities => cities.filter(c => c.id != id));
   };
 
   return (
@@ -56,7 +56,7 @@ function App() {
       <Switch>
         <Route
           path='/:id'
-          render={(props) => <DetailsCard props={props} cities={cities} />}
+          render={props => <DetailsCard props={props} cities={cities} />}
         />
         <Route
           path='/'
